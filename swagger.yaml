@@ -8,7 +8,7 @@ info:
     email: stefankeyboard2002@gmail.com
 
 servers:
-  - url: mi-api-aventura-six.vercel.app
+  - url: https://mi-api-aventura-six.vercel.app
     description: Api
 
 paths:
