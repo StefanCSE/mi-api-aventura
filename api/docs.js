@@ -11,7 +11,7 @@ export default function handler(req, res) {
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Mi API Aventura </tite>
+        <title>Mi API Aventura</title>
         <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@4.5.0/swagger-ui.css" />
       </head>
       <body>
@@ -38,6 +38,6 @@ export default function handler(req, res) {
     res.setHeader('Content-Type', 'text/html');
     res.status(200).send(html);
   } catch (error) {
-    res.status(500).json({ error: "Error al cargar la documentacion", details: error.message });
+    res.status(500).json({ error: "No se pudo cargar el YAML", details: error.message });
   }
 }
