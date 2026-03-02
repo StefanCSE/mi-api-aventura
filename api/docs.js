@@ -17,15 +17,18 @@ const JS_URLS = [
 
 export default function handler(req, res) {
   try {
-    // Generamos el HTML inyectando los links a los CDNs externos
     const html = swaggerUi.generateHTML(swaggerDocument, {
       customCssUrl: CSS_URL,
-      customJs: JS_URLS
+      customJs: JS_URLS,
+      customSiteTitle: "Mi API Aventura - Docs"
     });
     
     res.setHeader('Content-Type', 'text/html');
     res.status(200).send(html);
   } catch (error) {
-    res.status(500).json({ error: "Error al cargar la documentación", details: error.message });
+    res.status(500).json({ 
+      error: "Error renderizando la documentación", 
+      message: error.message 
+    });
   }
 }
